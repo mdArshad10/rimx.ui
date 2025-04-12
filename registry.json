@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "remix",
+  "homepage": "http://localhost:5174/",
+  "items": [
+    {
+      "name": "Button",
+      "type": "registry:component",
+      "title": "",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "description": "A simple hello world component.",
+      "files": [
+        {
+          "path": "src/component/ui/button.tsx",
+          "type": "registry:component",
+          "target": "src/component/remix/ui/button.tsx"
+        }
+      ]
+    }
+  ]
+}
