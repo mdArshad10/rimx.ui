@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Button",
+  "type": "registry:component",
+  "title": "",
+  "description": "A simple hello world component.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "src/component/ui/button.tsx",
+      "content": "import {cn} from \"@/utils/cn.ts\";\r\nimport { cva, type VariantProps } from \"class-variance-authority\";\r\nimport {Slot} from '@radix-ui/react-slot'\r\n\r\nexport const buttonVariants = cva(\r\n  \"inline-flex gap-2 item-center text-white text-white justify-center px-4 py-3 rounded-full text-bold rounded-md shadow-md shadow-neutral-200 dark:shadow-neutral-800 transition-all duration-300\",\r\n  {\r\n    variants: {\r\n      variant: {\r\n        default:\r\n          \"bg-primary-500 hover:bg-primary-600 dark:bg-primary-400 dark:hover:bg-primary-500 dark:text-white\",\r\n        secondary: \"bg-accent-500 hover:bg-accent-600 text-white\",\r\n        destructive: \"bg-error-500 hover:bg-error-600 text-white\",\r\n        outline:\r\n          \"border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-400 dark:hover:text-white\",\r\n        icon: \"bg-primary-500 hover:bg-primary-600 text-white dark:bg-primary-400 dark:hover:bg-primary-500 dark:text-white\",\r\n        withIcon:\r\n          \"bg-primary-500 hover:bg-primary-600 text-white dark:bg-primary-400 dark:hover:bg-primary-500 dark:text-white\",\r\n      },\r\n      size: {\r\n        sm: \"text-body-sm px-3 py-1.5\",\r\n        md: \"text-body-md px-4 py-2\",\r\n        lg: \"text-body-lg px-5 py-2.5\",\r\n      },\r\n      defaultVariants: {\r\n        variant: \"default\",\r\n        size: \"md\",\r\n      },\r\n    },\r\n  }\r\n);\r\n\r\nconst Button = ({\r\n  variant=\"default\", \r\n  size=\"md\",\r\n  className=\"\", \r\n  asChild=false,\r\n  ...props}:React.ComponentProps<\"button\"> &{\r\n    className?:string,\r\n    asChild?:boolean\r\n  } & VariantProps<typeof buttonVariants> ) => {\r\n  \r\n  const Comp = asChild ?  Slot: \"button\";\r\n\r\n  return (\r\n    <Comp data-slot=\"button\" className={cn(buttonVariants({variant, size, className}))} {...props} />\r\n  );\r\n};\r\n\r\nexport default Button;\r\n\r\n\r\n\r\n",
+      "type": "registry:component",
+      "target": "src/component/remix/ui/button.tsx"
+    }
+  ]
+}
