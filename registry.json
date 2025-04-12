@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "remix",
-  "homepage": "https://rimx-ui.vercel.app/",
+  "homepage": "http://localhost:5173/",
   "items": [
     {
       "name": "Button",
