@@ -1,5 +1,5 @@
 import './App.css'
-import Button from "@/component/ui/button.tsx";
+// import Button from "@/component/ui/button.tsx";
 import { Label } from './component/ui/label';
 import { Checkbox } from './component/ui/checkbox';
 

@@ -1,3 +1,4 @@
+import * as React from "react";
 import { cn } from "@/utils/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -12,7 +13,12 @@ const inputVariant = cva("", {
   },
 });
 
-function Input({ type = "text", variant="default" , className="", ...props }) {
+function Input({
+  type = "text",
+  variant = "default",
+  className,
+  ...props
+}: React.ComponentProps<"input"> & VariantProps<typeof inputVariant>) {
   return (
     <input
       data-slot="input"

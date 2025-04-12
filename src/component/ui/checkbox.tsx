@@ -1,3 +1,4 @@
+import * as React from 'react'
 import * as PrimitiveCheckbox from '@radix-ui/react-checkbox'
 import {cn} from '@/utils/cn'
 import { CheckIcon } from "lucide-react";
@@ -19,7 +20,9 @@ const checkboxVariants = cva(
 );
 
 
-function Checkbox({className="", variant="default", ...props}){
+function Checkbox({className, variant="default", ...props}:React.ComponentProps<typeof PrimitiveCheckbox.Indicator> & VariantProps<typeof checkboxVariants> & {
+  className?:string
+}){
     return (
       <PrimitiveCheckbox.Root
         data-slot="checkbox"
@@ -28,6 +31,7 @@ function Checkbox({className="", variant="default", ...props}){
         <PrimitiveCheckbox.Indicator
           data-slot="checkbox-indicator"
           className="flex items-center justify-center text-current transition-none"
+          {...props}
         >
           <CheckIcon />
         </PrimitiveCheckbox.Indicator>

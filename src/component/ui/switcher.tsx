@@ -1,9 +1,8 @@
 import * as React from "react";
 import * as PrimitiveSwitch from "@radix-ui/react-switch";
-import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/cn";
 
-function Switch({ className = "", ...props }) {
+function Switch({ className, ...props }:React.ComponentProps<typeof PrimitiveSwitch.SwitchThumb>) {
   return (
     <PrimitiveSwitch.Root data-slot="switch" className={cn("", className)}>
       <PrimitiveSwitch.SwitchThumb

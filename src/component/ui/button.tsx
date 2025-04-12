@@ -35,7 +35,10 @@ const Button = ({
   size="md",
   className="", 
   asChild=false,
-  ...props}) => {
+  ...props}:React.ComponentProps<"button"> &{
+    className?:string,
+    asChild?:boolean
+  } & VariantProps<typeof buttonVariants> ) => {
   
   const Comp = asChild ?  Slot: "button";
 

@@ -1,22 +1,8 @@
 import * as React from 'react'
 import * as PrimitiveAlter from '@radix-ui/react-alert-dialog'
 import {cn} from "@/utils/cn"
-import {cva, type VariantProps} from 'class-variance-authority'
+import { buttonVariants } from './button'
 
-const alertVariants = cva("", {
-    variants:{
-        variant:{
-            warning:"",
-            success:"",
-            danger:"",
-            info:""
-        }
-    },
-    defaultVariants:{
-        variant:"info",
-
-    }
-})
 
 function AlertDialog({
   ...props
@@ -141,9 +127,9 @@ function AlertDialogAction({
 function AlertDialogCancel({
   className,
   ...props
-}: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
+}: React.ComponentProps<typeof PrimitiveAlter.Cancel>) {
   return (
-    <AlertDialogPrimitive.Cancel
+    <PrimitiveAlter.Cancel
       className={cn(buttonVariants({ variant: "outline" }), className)}
       {...props}
     />

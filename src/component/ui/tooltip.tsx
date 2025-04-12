@@ -1,20 +1,27 @@
+import * as React from "react";
 import * as PrimitiveTooltip from "@radix-ui/react-tooltip";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/cn";
 
-function ToolitpProvider({children, delayDuration = 0, ...props }) {
+function ToolitpProvider({
+  children,
+  delayDuration = 0,
+  ...props
+}: React.ComponentProps<typeof PrimitiveTooltip.Provider>) {
   return (
     <PrimitiveTooltip.Provider
       data-slot="tooltip-provider"
       delayDuration={delayDuration}
       {...props}
     >
-        {children}
+      {children}
     </PrimitiveTooltip.Provider>
   );
 }
 
-function Tooltip({ ...props }) {
+function Tooltip({
+  ...props
+}: React.ComponentProps<typeof PrimitiveTooltip.Root>) {
   return (
     <ToolitpProvider>
       <PrimitiveTooltip.Root data-slot="tooltip" {...props} />
@@ -22,7 +29,9 @@ function Tooltip({ ...props }) {
   );
 }
 
-function TooltipTrigger({ ...props }) {
+function TooltipTrigger({
+  ...props
+}: React.ComponentProps<typeof PrimitiveTooltip.Trigger>) {
   return <PrimitiveTooltip.Trigger data-slot="tooltip-trigger" {...props} />;
 }
 
@@ -46,7 +55,8 @@ function TooltipContent({
   className,
   sideOffset = 5,
   ...props
-}) {
+}: React.ComponentProps<typeof PrimitiveTooltip.Content> &
+  VariantProps<typeof tootltipContentVariant>) {
   return (
     <PrimitiveTooltip.Portal data-slot="tooltip-portal">
       <PrimitiveTooltip.Content
